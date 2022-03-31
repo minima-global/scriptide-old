@@ -1,0 +1,17 @@
+# node package
+node_modules
+
+# js bundle
+dist/bundle.js
+
+# vscode debug config
+.vscode
+
+# zip files
+*.zip
+
+# npmrc
+.npmrc
+
+# ios
+.DS_Store
