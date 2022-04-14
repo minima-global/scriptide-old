@@ -8,7 +8,7 @@
 	<script type="text/javascript" src="./js/scriptide.js"></script>
 	<script type="text/javascript" src="./js/taboverride.js"></script> -->
 
-	
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<!--  STYLE -->
 	<link rel="stylesheet" type="text/css" href="./css/scriptide.css">
 		
@@ -21,20 +21,26 @@
 
 
 <center>
-<div style="width:1000;background-color:#fff;border-radius:20px;">
+<div class="container">
 
 <br>
 
 <div style="font-size:36px;"><b>Minima Script IDE</b></div>
 
-<table border=0>
+<div class="table-content">
+	<h4 style="text-align: left; font-weight: normal;"><b>SCRIPT</b> - Lowercase, newlines, tabs and comments using /* .. */ are supported. Removed and cleaned.</h4>
+	<textarea id='scriptarea' spellcheck="false" ></textarea>
+</div>
 
-<tr>
+<table border=0 class="table-content">
+
+<!-- <tr>
 	<td colspan=2><br><b>SCRIPT</b> - Lowercase, newlines, tabs and comments using /* .. */ are supported. Removed and cleaned.<br>
-	<textarea style='resize: vertical;width: 950px;height: 360px;' id='scriptarea' spellcheck="false" ></textarea></td>
-</tr>
+	<textarea id='scriptarea' spellcheck="false" ></textarea></td>
+</tr> -->
 
-<tr>
+<!-- Scripts Desktop View -->
+<!-- <tr id="scripts-desktop">
 	<td align=left>
 		<select id="scripts" onchange="loadScript();">
 		  <option value="1">SCRIPT_1</option>
@@ -56,7 +62,66 @@
 	<td align=right>
 	    <button onclick='runScript();'>RUN SCRIPT</button>
 	</td>
-</tr>
+</tr> -->
+<!-- @@@@ -->
+
+<div id="scripts-desktop-v2">
+	<div>
+		<select id="scripts" onchange="loadScript();">
+		  <option value="1">SCRIPT_1</option>
+		  <option value="2">SCRIPT_2</option>
+		  <option value="3">SCRIPT_3</option>
+		  <option value="4">SCRIPT_4</option>
+		  <option value="5">SCRIPT_5</option>
+		  <option value="6">SCRIPT_6</option>
+		  <option value="7">SCRIPT_7</option>
+		  <option value="8">SCRIPT_8</option>
+		</select>
+		<input type="checkbox" id="autosave" name='autosave'> <label for="autosave">AUTOSAVE</label>
+		<div style="display: flex;margin-top:16px">
+			<button onclick='loadScript();'>LOAD</button>
+			<button onclick='save();'>SAVE</button>
+		</div>
+	</div>
+	<div>
+		<button onclick='runScript();'>RUN SCRIPT</button>
+	</div>
+</div>
+<div id="scripts-mobile-v2">
+</div>
+
+<!-- Scripts Mobile View -->
+<!-- <tr id="scripts-mobile">
+	<td align=left>
+		<select id="scripts" onchange="loadScript();">
+		  <option value="1">SCRIPT_1</option>
+		  <option value="2">SCRIPT_2</option>
+		  <option value="3">SCRIPT_3</option>
+		  <option value="4">SCRIPT_4</option>
+		  <option value="5">SCRIPT_5</option>
+		  <option value="6">SCRIPT_6</option>
+		  <option value="7">SCRIPT_7</option>
+		  <option value="8">SCRIPT_8</option>
+		</select>
+		<input type="checkbox" id="autosave" name='autosave'> <label for="autosave">AUTOSAVE</label>
+		&nbsp;
+		&nbsp;
+		<button onclick='loadScript();'>LOAD</button>
+		<button onclick='save();'>SAVE</button>
+	</td>
+	
+	
+	<td align=right>
+	    <button onclick='runScript();'>RUN SCRIPT</button>
+	</td>
+</tr> -->
+
+
+<!-- @@@@ -->
+
+
+
+
 
 <tr>
 <td colspan=2>&nbsp;</td>
@@ -64,27 +129,27 @@
 
 <tr>
 	<td colspan=2><b>STATE</b> - JSON<br>
-	<textarea placeholder='{"0":"123","1":"0x45FF","2":"[RETURN TRUE]"}' style='resize: none;width: 950px;' rows=1 id='state' spellcheck="false" ></textarea></td>
+	<textarea placeholder='{"0":"123","1":"0x45FF","2":"[RETURN TRUE]"}' style='resize: none;' rows=1 id='state' spellcheck="false" ></textarea></td>
 </tr>
 
 <tr>
 	<td colspan=2><b>PREVSTATE</b> - JSON<br>
-	<textarea placeholder='{"0":"123","1":"0x45FF","2":"[RETURN TRUE]"}' style='resize: none;width: 950px;' rows=1 id='prevstate' spellcheck="false" ></textarea></td>
+	<textarea placeholder='{"0":"123","1":"0x45FF","2":"[RETURN TRUE]"}' style='resize: none;' rows=1 id='prevstate' spellcheck="false" ></textarea></td>
 </tr>
 
 <tr>
 	<td colspan=2><b>SIGNATURES</b> - JSONARRAY<br>
-	<textarea placeholder='["0xFFEE44","0xCC54EDAB"]' style='resize: none;width: 950px;' rows=1 id='sigs' spellcheck="false" ></textarea></td>
+	<textarea placeholder='["0xFFEE44","0xCC54EDAB"]' style='resize: none;' rows=1 id='sigs' spellcheck="false" ></textarea></td>
 </tr>
 
 <tr>
 	<td colspan=2><b>SCRIPTS</b> - JSON of script + proof ( proof can be blank if single script ) .. Use mmrcreate to make proof trees<br>
-	<textarea placeholder='{"RETURN TRUE":""}' style='resize: none;width: 950px;' rows=1 id='mastscripts' spellcheck="false" ></textarea></td>
+	<textarea placeholder='{"RETURN TRUE":""}' style='resize: none;' rows=1 id='mastscripts' spellcheck="false" ></textarea></td>
 </tr>
 
 <tr>
 	<td colspan=2><br><b>GLOBALS</b> - the predefined variables every script has access to. NON-Blank are set<br>
-	<table style='background-color:#CCCCCC;font-size:12px;font-family:monospace;width:950px;'>
+	<table style='width:100%;background-color:#CCCCCC;font-size:12px;font-family:monospace;'>
 		<tr> 
 			<td align=right>@BLOCK : </td>  <td align=left><input type=text id="@BLOCK" spellcheck="false" value=""></td>
 		    <td align=right>@CREATED : </td>  <td align=left><input type=text id="@CREATED" spellcheck="false" value=""></td>
@@ -131,15 +196,15 @@
 -->
 
 <tr>
-	<td colspan=2><br>RUN RESULT<br><div id='parse' style="resize:vertical;height:200px" class="greybox"></div></td>
+	<td colspan=2><br>RUN RESULT<br><div id='parse' style="resize:vertical;height:200px;width:98%" class="greybox"></div></td>
 </tr>
 
 <tr>
-	<td colspan=2><br>CLEAN SCRIPT<br><div id='clean' style="resize:vertical;height:80px" class="greybox"></div></td>
+	<td colspan=2><br>CLEAN SCRIPT<br><div id='clean' style="resize:vertical;height:80px;width:98%" class="greybox"></div></td>
 </tr>
 
 <tr>
-	<td colspan=2><br>ADDRESS<br><div id='cleanaddress' style="height:20px" class="greybox"></div></td>
+	<td colspan=2><br>ADDRESS<br><div id='cleanaddress' style="height:20px;width:98%" class="greybox"></div></td>
 </tr>
 
 </table>
