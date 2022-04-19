@@ -16,16 +16,14 @@
 		
 </head>
 
-<body style="background-image: url(./images/tile-body.png);">
+<body style="background-image: url(./images/LM.jpeg); background-size:auto">
 
 
-
-<center>
 <div class="container">
 
 <br>
 
-<div style="font-size:36px;"><b>Minima Script IDE</b></div>
+<h3>Minima Script IDE</h4>
 
 <div class="table-content">
 	<h4 style="text-align: left; font-weight: normal;"><b>SCRIPT</b> - Lowercase, newlines, tabs and comments using /* .. */ are supported. Removed and cleaned.</h4>
@@ -84,7 +82,7 @@
 		</div>
 	</div>
 	<div>
-		<button onclick='runScript();'>RUN SCRIPT</button>
+		<button id="runscript-btn" onclick='runScript();'>Run Script</button>
 	</div>
 </div>
 <div id="scripts-mobile-v2">
@@ -149,7 +147,7 @@
 
 <tr>
 	<td colspan=2><br><b>GLOBALS</b> - the predefined variables every script has access to. NON-Blank are set<br>
-	<table style='width:100%;background-color:#CCCCCC;font-size:12px;font-family:monospace;'>
+	<table style='width:100%;background-color:#D3D3D8;font-size:12px;font-family:monospace;'>
 		<tr> 
 			<td align=right>@BLOCK : </td>  <td align=left><input type=text id="@BLOCK" spellcheck="false" value=""></td>
 		    <td align=right>@CREATED : </td>  <td align=left><input type=text id="@CREATED" spellcheck="false" value=""></td>
@@ -211,7 +209,7 @@
 <br><br>
 </div>
 
-</center>
+
 
 <script type="text/javascript" src="./bundle.js"></script>
 <script type="text/javascript" src="./js/taboverride.js"></script>
