@@ -15,10 +15,16 @@ html, body {
 }
 
 body {
-	display: flex;
+	/* display: flex; */
 	min-height: 100vh;
+	/* justify-content: center;
+	flex-direction: row; */
+}
+
+.flexbox {
+	display: flex;
+	align-items: center;
 	justify-content: center;
-	flex-direction: row;
 }
 
 code {
