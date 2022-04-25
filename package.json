@@ -7,7 +7,7 @@
   "scripts": {
     "build": "webpack",
     "dev-server": "webpack-dev-server",
-    "build-zip": "webpack && cd dist && zip -r scriptide.zip . && mv scriptide.zip ../",
+    "build-zip": "webpack && rm scriptide_* && date=$(date +%Y_%m_%d_%H%M) && cd dist && zip -r scriptide_${date}.zip . && mv scriptide_${date}.zip ../",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
