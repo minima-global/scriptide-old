@@ -47,6 +47,8 @@ function runScript() {
   var prevstate = document.getElementById("prevstate").value.trim();
   if (prevstate != "") {
     // prevstate = "prevstate:" + prevstate;
+    console.log(prevstate);
+    console.log(`Is prevstate`, prevstate && prevstate.length ? prevstate : {});
     prevstate = prevstate;
   }
 
@@ -77,7 +79,7 @@ function runScript() {
 
   mdsCmds
     .runscript({
-      script: script,
+      script: '"' + script + '"',
       signatures: sigs && sigs.length ? sigs : [],
       state: state && state.length ? state : {},
       prevstate: prevstate && prevstate.length ? prevstate : {},

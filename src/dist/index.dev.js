@@ -62,6 +62,8 @@ function runScript() {
 
   if (prevstate != "") {
     // prevstate = "prevstate:" + prevstate;
+    console.log(prevstate);
+    console.log("Is prevstate", prevstate && prevstate.length ? prevstate : {});
     prevstate = prevstate;
   }
 
@@ -90,7 +92,7 @@ function runScript() {
   // });
 
   mdsCmds.runscript({
-    script: script,
+    script: '"' + script + '"',
     signatures: sigs && sigs.length ? sigs : [],
     state: state && state.length ? state : {},
     prevstate: prevstate && prevstate.length ? prevstate : {},
@@ -128,7 +130,7 @@ function runScript() {
 
     document.getElementById("cleanaddress").innerHTML = json.clean.address;
     document.getElementById("@ADDRESS").value = json.clean.address;
-  }).catch(function (err) {
+  })["catch"](function (err) {
     console.error(err);
   }); // TODO replace with mds-api
   // Minima.cmd(
