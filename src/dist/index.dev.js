@@ -62,8 +62,6 @@ function runScript() {
 
   if (prevstate != "") {
     // prevstate = "prevstate:" + prevstate;
-    console.log(prevstate);
-    console.log("Is prevstate", prevstate && prevstate.length ? prevstate : {});
     prevstate = prevstate;
   }
 
